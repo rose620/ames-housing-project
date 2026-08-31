@@ -27,7 +27,8 @@ def main():
     
     # 3. Programmatically separate data pools (Chained solution!)
     numeric_cols = [col for col in X.select_dtypes(include=['int64', 'float64']).columns]
-    categorical_cols = X.select_dtypes(include=['object', 'category']).columns.tolist()
+    categorical_cols = X.select_dtypes(include=['object', 'category', 'str']).columns.tolist()
+
     
     # 4. Establish Train/Test Isolation Splits
     X_train, X_test, y_train, y_test = train_test_split(
