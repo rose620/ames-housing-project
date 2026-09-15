@@ -110,24 +110,6 @@ python main.py
 
 ---
 
-## 📁 Repository Structure
-* `main.py`: Main execution script to trigger data processing, model training, and metrics export.
-* `src/pipeline.py`: Production-grade Scikit-Learn `ColumnTransformer` and pipeline components.
-* `src/evaluation.py`: Modules for extracting coefficients, feature weights, and residual evaluations.
-* `outputs/`: Automatically exported diagnostic and performance visualizations.
-
-## 💻 How to Run
-To reproduce the model pipeline and view diagnostic metrics locally:
-```bash
-# 1. Install dependencies:
-pip install -r requirements.txt
-
-# 2. Run the pipeline:
-python main.py
-```
-
----
-
 ## 🪵 Production Log Output (Verbatim Execution)
 Below is the exact output from the unified evaluation pipeline, documenting the performance breakthrough achieved by the **Ensemble Blend**:
 

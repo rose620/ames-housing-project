@@ -1,2 +1,4 @@
 __pycache__/
-
+# Development environment files
+.ipynb_checkpoints/
+.vscode/
