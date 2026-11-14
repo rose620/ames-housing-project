@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 from sklearn.model_selection import GridSearchCV
-from sklearn.compose import TransformedTargetRegressor
+from src.pipeline import SmearingLogTargetRegressor
 
 def plot_and_save_coefficients(importance_df, metric_label, is_log_scale=False, output_dir="outputs"):
     """
@@ -88,9 +88,10 @@ def run_model_audit(pipeline, X_train, X_test, y_train, y_test):
     is_log_scale = False
     
     # 2. Safely extract the inner core model if it is wrapped inside a target transformer
-    if isinstance(pipeline_regressor, TransformedTargetRegressor):
+    if isinstance(pipeline_regressor, SmearingLogTargetRegressor):
         core_model = pipeline_regressor.regressor_
         is_log_scale = True
+        print(f"Duan's Smearing Factor:  {pipeline_regressor.smearing_factor_:.4f}")
     else:
         core_model = pipeline_regressor
     

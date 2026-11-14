@@ -1,4 +1,4 @@
-cimport pandas as pd
+import pandas as pd
 import os
 import warnings
 from sklearn.model_selection import train_test_split
